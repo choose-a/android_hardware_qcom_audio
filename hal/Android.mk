@@ -201,6 +201,15 @@ ifeq ($(strip $(AUDIO_FEATURE_ENABLED_BG_CAL)),true)
     LOCAL_CFLAGS += -DBG_CODEC_CAL
 endif
 
+LOCAL_CFLAGS += -Wall -Werror
+LOCAL_CFLAGS += \
+    -Wno-error \
+    -Wno-format \
+    -Wno-unused-value \
+    -Wno-unused-variable \
+    -Wno-unused-function \
+    -Wno-missing-field-initializers
+
 LOCAL_SHARED_LIBRARIES += libbase libhidlbase libhwbinder libutils android.hardware.power@1.2 liblog
 
 LOCAL_SRC_FILES += audio_perf.cpp
